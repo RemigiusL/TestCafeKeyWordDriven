@@ -1,0 +1,25 @@
+[2019-09-04T11:58:03.283] [INFO] default - navigateTo XPath http://kran.avalia.no/ - After test execution, actual test result should be navigated
+[2019-09-04T11:58:17.980] [INFO] default - click XPath //*[@id="navbar"]/ul[1]/li/a - After test execution, actual test result should be clicked
+[2019-09-04T11:58:20.114] [INFO] default - click XPath //a[contains(text(),'Engelsk')] - After test execution, actual test result should be clicked
+[2019-09-04T11:58:24.893] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-04T11:58:32.908] [INFO] default - typeText XPath remi@processdrive.com - After test execution, actual test result should be filled
+[2019-09-04T11:58:37.993] [INFO] default - typeText XPath Pd123456 - After test execution, actual test result should be filled
+[2019-09-04T11:58:41.171] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-04T11:58:48.003] [INFO] default - click XPath //*[@id="navbar"]/ul[3]/li[1]/a - After test execution, actual test result should be clicked
+[2019-09-04T11:58:49.926] [INFO] default - click XPath //a[contains(text(),'User Types')] - After test execution, actual test result should be clicked
+[2019-09-04T11:58:52.664] [INFO] default - click XPath //a[@class='btn btn-primary'] - After test execution, actual test result should be clicked
+[2019-09-04T11:58:57.522] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-04T11:59:01.375] [INFO] default - click XPath //a[@class='btn btn-danger'] - After test execution, actual test result should be clicked
+
+[2019-09-04T12:24:34.471] [INFO] default - navigateTo XPath http://kran.avalia.no/ - After test execution, actual test result should be navigated
+[2019-09-04T12:24:44.884] [INFO] default - click XPath //*[@id="navbar"]/ul[1]/li/a - After test execution, actual test result should be clicked
+[2019-09-04T12:24:46.937] [INFO] default - click XPath //a[contains(text(),'Engelsk')] - After test execution, actual test result should be clicked
+[2019-09-04T12:24:51.687] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-04T12:24:59.710] [INFO] default - typeText XPath remi@processdrive.com - After test execution, actual test result should be filled
+[2019-09-04T12:25:04.811] [INFO] default - typeText XPath Pd123456 - After test execution, actual test result should be filled
+[2019-09-04T12:25:08.132] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-04T12:25:15.828] [INFO] default - click XPath //*[@id="navbar"]/ul[3]/li[1]/a - After test execution, actual test result should be clicked
+[2019-09-04T12:25:17.658] [INFO] default - click XPath //a[contains(text(),'User Types')] - After test execution, actual test result should be clicked
+[2019-09-04T12:25:20.442] [INFO] default - click XPath //a[@class='btn btn-primary'] - After test execution, actual test result should be clicked
+[2019-09-04T12:25:24.775] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-04T12:25:28.666] [INFO] default - click XPath //a[@class='btn btn-danger'] - After test execution, actual test result should be clicked

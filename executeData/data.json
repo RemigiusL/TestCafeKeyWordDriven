@@ -1,0 +1,103 @@
+[
+    {
+        "TCID": "TC01",
+        "TestSteps": "Login",
+        "Keyword": "navigateTo",
+        "Parameter": "https://pd.weldtest.no/dashboard"
+    },
+    {
+        "TCID": "TC02",
+        "Keyword": "click",
+        "LocatorType": "XPath",
+        "LocatorValue": "//input[@value='Logg in']"
+    },
+    {
+        "TCID": "TC03",
+        "Keyword": "typeText",
+        "LocatorType": "XPath",
+        "LocatorValue": "//input[@id='inputEmail']",
+        "Parameter": "remigiusbca@gmail.com"
+    },
+    {
+        "TCID": "TC04",
+        "Keyword": "typeText",
+        "LocatorType": "XPath",
+        "LocatorValue": "//input[@id='inputPassword']",
+        "Parameter": "123456"
+    },
+    {
+        "TCID": "TC05",
+        "Keyword": "click",
+        "LocatorType": "XPath",
+        "LocatorValue": "//input[@value='Logg in']"
+    },
+    {
+        "TCID": "TC01",
+        "navigateTo" : "navigateTo",
+        "Url" : "http://bil.avalia.no/",
+        "Keyword": "typeText",
+        "LocatorType": "XPath",
+        "LocatorValue": "#inputEmail",
+        "Parameter": "remigiusbca@gmail.com"
+    },
+    {
+        "TCID": "TC02",
+        "Keyword": "typeText",
+        "LocatorType": "XPath",
+        "LocatorValue": "#inputPassword",
+        "Parameter": "123456"
+    },
+    {
+        "TCID": "TC03",
+        "Keyword": "click",
+        "LocatorType": "XPath",
+        "LocatorValue": "#inputCheckbox"
+    },
+    {
+        "TCID": "TC04",
+        "Keyword": "typeText",
+        "LocatorType": "XPath",
+        "LocatorValue": "#email",
+        "Parameter": "admin@avalia.no"
+    },
+    {
+        "TCID": "TC05",
+        "Keyword": "typeText",
+        "LocatorType": "XPath",
+        "LocatorValue": "#password",
+        "Parameter": "12345678"
+    },
+    {
+        "name": "John Heart",
+        "comment": "I love TestCafe!",
+        "resultText": "Thank you, John Heart!",
+        "Button":"#submit-button",
+        "id":"#developer-name",
+        "Key":"typeText"
+
+    },
+    { "id":"#developer-name",
+        "name": "Olivia Peyton",
+        "comment": "TestCafe is awesome!",
+        "resultText": "Thank you, Olivia Peyton!",
+        "Button":"#submit-button",
+        "Key":"typeText"
+
+    },
+    {
+        "name": "David Antony",
+        "comment": "TestCafe is Good!",
+        "resultText": "Thank you, David Antony!",
+        "Button":"#submit-button",
+        "id":"#developer-name",
+        "Key":"typeText"
+    },
+    {
+        "name": "Remigius L",
+        "comment": "TestCafe is Not bad!",
+        "resultText": "Thank you, Remigius L!",
+        "Button":"#submit-button",
+        "id":"#developer-name",
+        "Key":"typeText"
+    }
+]
