@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Keyword-Driven using TestCafe (beta)
 
 This is the **Keyword-Driven** framework plugin for [TestCafe](http://devexpress.github.io/testcafe).
@@ -164,3 +165,7 @@ C:\ProcessDrive\TestCafe\Trails\Keyword_Driven>testcafe chrome Keyword-Driven.js
 - [RemigiusLourdusamy](https://github.com/RemigiusL/)
 
 
+=======
+# TestCafeKeyWordDriven
+Testcafe Keyword Driven Framework is a type of Functional Automation Testing Framework which is also known as Table-Driven testing or Action Word based testing.
+>>>>>>> refs/remotes/origin/master
