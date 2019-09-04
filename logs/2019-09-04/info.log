@@ -11,6 +11,7 @@
 [2019-09-04T11:58:57.522] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
 [2019-09-04T11:59:01.375] [INFO] default - click XPath //a[@class='btn btn-danger'] - After test execution, actual test result should be clicked
 
+
 [2019-09-04T12:24:34.471] [INFO] default - navigateTo XPath http://kran.avalia.no/ - After test execution, actual test result should be navigated
 [2019-09-04T12:24:44.884] [INFO] default - click XPath //*[@id="navbar"]/ul[1]/li/a - After test execution, actual test result should be clicked
 [2019-09-04T12:24:46.937] [INFO] default - click XPath //a[contains(text(),'Engelsk')] - After test execution, actual test result should be clicked

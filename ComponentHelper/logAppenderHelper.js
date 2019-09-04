@@ -114,4 +114,24 @@ export default class logAppender {
             // const logger = log4js.getLogger();
             // logger.info({ tags: ['my-tag-1', 'my-tag-2'] }, 'Some message');
     }
+
+    async slack(){
+      
+        const logger = getLogger();
+        logger.level = 'error';
+        log4js.configure({
+          appenders: {
+            alerts: {
+              type: '@log4js-node/slack',
+              token: 'xoxp-473141949633-477188316819-748342760245-f9bd3bfb21846caedfa553245c3e59e0',
+              channel_id: 'DE15KT319',
+              username: 'Remi',
+              //attachments: "logs/"+day+"/info.log"
+            }
+          },
+          categories: {
+            default: { appenders: ['alerts'], level: 'error' }
+          }
+        });
+      }
 }

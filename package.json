@@ -5,6 +5,7 @@
   "main": "Keyword-Driven.js",
   "homepage": "https://github.com/RemigiusL/TestCafeKeyWordDriven/blob/master/README.md",
   "dependencies": {
+    "@log4js-node/slack": "^1.0.0",
     "check-prop-types": "^1.1.2",
     "dateformat": "^3.0.3",
     "ffmpeg": "^0.0.4",

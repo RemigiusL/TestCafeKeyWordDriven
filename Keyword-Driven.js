@@ -11,6 +11,7 @@ const logger = getLogger();
         logger.level = 'info';
 const getLogAppender = new logAppender()
 getLogAppender.info()
+getLogAppender.slack()
         
 
 fixture `Getting Started`
@@ -49,6 +50,7 @@ try {
                     return;
             }
             await t.setTestSpeed(0.1)
+            logger.error("test error")
         }
     });
     
