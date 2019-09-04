@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RemigiusL/Testcafe-Keyword-Driven"
+    "url": "https://github.com/RemigiusL/TestCafeKeyWordDriven"
   },
   "keywords": [
     "pageobjectmodel",
@@ -36,6 +36,6 @@
   "author": "RemigiusLourdusamy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RemigiusL/Testcafe-Keyword-Driven/issues"
+    "url": "https://github.com/RemigiusL/TestCafeKeyWordDriven/issues"
   }
 }
