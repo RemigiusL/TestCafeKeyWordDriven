@@ -1,9 +1,9 @@
 {
   "name": "keyword_driven",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Testcafe Keyword Driven Framework is a type of Functional Automation Testing Framework which is also known as Table-Driven testing or Action Word based testing. ",
   "main": "Keyword-Driven.js",
-  "homepage": "https://github.com/RemigiusL/Testcafe-Keyword-Driven/blob/master/README.md",
+  "homepage": "https://github.com/RemigiusL/TestCafeKeyWordDriven/blob/master/README.md",
   "dependencies": {
     "check-prop-types": "^1.1.2",
     "dateformat": "^3.0.3",

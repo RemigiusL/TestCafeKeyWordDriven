@@ -4,18 +4,18 @@ import makeDir from './ComponentHelper/makeDirHelper';
 import logAppender from './ComponentHelper/logAppenderHelper';
 import { configure, getLogger } from 'log4js';
 
-const gemyDir = new makeDir()
-      gemyDir.makeDir();
+const getmyDir = new makeDir()
+      getmyDir.makeDir();
 
 const logger = getLogger();
-        logger.level = 'debug';
+        logger.level = 'info';
 const getLogAppender = new logAppender()
 getLogAppender.info()
         
 
 fixture `Getting Started`
 
-.page `https://angelswelding.hms2go.no/`;
+.page `https://devexpress.github.io/testcafe/documentation/getting-started/`;
 
 var XLSX = require('xlsx')
     var workbook = XLSX.readFile('./executeData/readfile.xlsx');
@@ -31,7 +31,7 @@ try {
             switch (element.Keyword) {
                 case "navigateTo":
                     await t[element.Keyword](element.Parameter)
-                    logger.info(element.Keyword +" XPath " +element.Parameter + " - After test execution, actual test result should be navigated")
+                    logger.info(element.Keyword +" Url " +element.Parameter + " - After test execution, actual test result should be navigated")
                     break;
                 case "click":
                     await t[element.Keyword](XPath(element.LocatorValue))
