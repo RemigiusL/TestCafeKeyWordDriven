@@ -6,6 +6,10 @@ let log4js = require("log4js");
 var dateFormat = require('dateformat');
 var day = dateFormat(new Date(), "yyyy-mm-dd");
 
+var Slack = require('node-slack-upload');
+var fs = require('../node_modules/fstream')
+var slack = new Slack('xoxp-473141949633-477188316819-748904662580-8a48b8b619ec03be45ae1a13cbc4dda7');
+
 export default class logAppender {
 
 
@@ -116,22 +120,47 @@ export default class logAppender {
     }
 
     async slack(){
-      
         const logger = getLogger();
         logger.level = 'error';
+
         log4js.configure({
           appenders: {
             alerts: {
               type: '@log4js-node/slack',
-              token: 'xoxp-473141949633-477188316819-748342760245-f9bd3bfb21846caedfa553245c3e59e0',
-              channel_id: 'DE15KT319',
+              token: 'xoxp-473141949633-477188316819-748904662580-8a48b8b619ec03be45ae1a13cbc4dda7',
+              channel_id: 'DE2LBQNKG',
               username: 'Remi',
-              //attachments: "logs/"+day+"/info.log"
-            }
+            },
+            app: { type: 'file', filename: "logs/"+day+"/info.log" }
           },
           categories: {
-            default: { appenders: ['alerts'], level: 'error' }
+            default: { appenders: ['alerts', 'app'], level: 'error' }
           }
         });
+      }
+
+      async messaging_api_slack(){
+        const client = SlackOAuthClient.connect(
+          'xoxp-473141949633-477188316819-748904662580-8a48b8b619ec03be45ae1a13cbc4dda7'
+        );
+  
+        client.callMethod('chat.postMessage', { channel: 'DE2LBQNKG', text: 'Hello!' });
+      }
+
+      async node_slack_upload(){
+        slack.uploadFile({
+          file: fs.createReadStream(path('README.md')),
+          filetype: 'post',
+          title: 'README',
+          initialComment: 'my comment',
+          channels: 'DE2LBQNKG'
+      }, function(err, data) {
+          if (err) {
+              console.error(err);
+          }
+          else {
+              console.log('Uploaded file details: ', data);
+          }
+      });
       }
 }
