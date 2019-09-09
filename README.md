@@ -2,7 +2,7 @@
 
 This is the **Keyword-Driven** framework plugin for [TestCafe](http://devexpress.github.io/testcafe).
 
-[![npm badge](https://www.youtube.com/watch?v=I6WuCe1My9w)]()
+[![npm badge](https://docs.devexpress.com/TestCafeStudio/images/guides/wait-for-page-to-load.gif)]()
 
 Testcafe Keyword Driven Framework is a type of Functional Automation Testing Framework which is also known as Table-Driven testing or Action Word based testing.
 
