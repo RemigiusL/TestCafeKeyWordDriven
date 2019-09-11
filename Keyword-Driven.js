@@ -7,12 +7,11 @@ import { configure, getLogger } from 'log4js';
 const getmyDir = new makeDir()
       getmyDir.makeDir();
 
-const logger = getLogger();
-        logger.level = 'info';
 const getLogAppender = new logAppender()
-getLogAppender.info()
-getLogAppender.node_slack_upload()
-        
+const logger = getLogger();
+        logger.level = 'debug';
+        getLogAppender.info()
+
 
 fixture `Getting Started`
 
@@ -32,7 +31,7 @@ try {
             switch (element.Keyword) {
                 case "navigateTo":
                     await t[element.Keyword](element.Parameter)
-                    logger.info(element.Keyword +" Url " +element.Parameter + " - After test execution, actual test result should be navigated")
+                    logger.info(element.Keyword +" XPath " +element.Parameter + " - After test execution, actual test result should be navigated")
                     break;
                 case "click":
                     await t[element.Keyword](XPath(element.LocatorValue))
@@ -43,7 +42,10 @@ try {
                     logger.info(element.Keyword +" XPath "+ element.Parameter +" - After test execution, actual test result should be filled")
                     break;
                 case "selectText":
-                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
+                    element.Keyword ="click"
+                    const interfaceSelect = XPath(element.LocatorValue);
+                    await t [element.Keyword](interfaceSelect)
+                    await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
                     logger.info(element.Keyword +" XPath "+ element.Parameter +" - After test execution, actual test result should be selected")
                     break;
                 default:
@@ -52,7 +54,8 @@ try {
             await t.setTestSpeed(0.1)
            // logger.error("check the file upload")
         }
-    });
+    })
+    getLogAppender.slack()
     
 } catch (error) {
     
