@@ -1,4 +1,4 @@
-# Keyword-Driven using TestCafe (beta)
+# Keyword-Driven Framework using TestCafe (beta)
 
 This is the **Keyword-Driven** framework plugin for [TestCafe](http://devexpress.github.io/testcafe).
 
@@ -126,7 +126,11 @@ C:\ProcessDrive\TestCafe\Trails\Keyword_Driven>testcafe chrome Keyword-Driven.js
          28 |                case "typeText":
          29 |                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
          30 |                    break;
-         31 |                case "selectText":
+         31 |                case "select":
+                                element.Keyword ="click"
+                                const interfaceSelect = XPath(element.LocatorValue);
+                                await t [element.Keyword](interfaceSelect)
+                                await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
 
          at <anonymous> (C:\ProcessDrive\TestCafe\Trails\Keyword_Driven\Keyword-Driven.js:26:27)
 

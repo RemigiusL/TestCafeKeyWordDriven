@@ -18,7 +18,7 @@ fixture `Getting Started`
 .page `https://devexpress.github.io/testcafe/documentation/getting-started/`;
 
 var XLSX = require('xlsx')
-    var workbook = XLSX.readFile('./executeData/readfile.xlsx');
+    var workbook = XLSX.readFile('./metaData/readfile.xlsx');
     var sheet_name_list = workbook.SheetNames;
     var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
 try {
@@ -41,7 +41,7 @@ try {
                     await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
                     logger.info(element.Keyword +" XPath "+ element.Parameter +" - After test execution, actual test result should be filled")
                     break;
-                case "selectText":
+                case "select":
                     element.Keyword ="click"
                     const interfaceSelect = XPath(element.LocatorValue);
                     await t [element.Keyword](interfaceSelect)

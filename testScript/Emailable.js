@@ -1,33 +1,20 @@
 import { Selector } from 'testcafe';
+import runner from '../ComponentHelper/RunnerHelper'
+//import runner  from '../ComponentHelper/RunnerHelper';
 
-fixture `Send an Email`
+fixture`A set of examples that illustrate how to use TestCafe API`
+    .page`http://devexpress.github.io/testcafe/example/`;
 
-//npm install nodemailer
+const developerName = Selector('#developer-name');
+const triedLabel    = Selector('label').withText('I have tried TestCafe');
+const sliderHandle  = Selector('#slider').child('span');
+const submitButton  = Selector('#submit-button');
 
-test('Send an Email', async t => {
-
-  
-  var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'remigiusbca@gmail.com',
-    pass: 'remi@123'
-  }
-});
-
-var mailOptions = {
-  from: 'remigiusbca@gmail.com',
-  to: 'remigiusbca@gmail.com, remi@processdrive.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-
+test.only('How to type text into an input (t.typeText user action)', async t => {
+    await t
+        .typeText(developerName, 'Peter')
+        .typeText(developerName, 'Paker', { replace: true })
+        .typeText(developerName, 'r', { caretPos: 2 })
+        .expect(developerName.value).eql('Parker');
+        runner.screenshots('artifacts/screenshots', true);
 });
