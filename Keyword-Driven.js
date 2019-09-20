@@ -27,6 +27,10 @@ try {
         // xlData.forEach(element => {
         for (let i = 0; i < xlData.length; i++) {
             let element = xlData[i]
+            let LocatorType = XPath
+            if (element.LocatorType == "Selector") {
+                LocatorType = Selector
+            }
             //[element.Keyword](element.Parameter)
             switch (element.Keyword) {
                 case "navigateTo":
@@ -38,7 +42,7 @@ try {
                     logger.info(element.Keyword +" XPath " +element.LocatorValue +" - After test execution, actual test result should be clicked")
                     break;
                 case "typeText":
-                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
+                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter, { speed: 1 })
                     logger.info(element.Keyword +" XPath "+ element.Parameter +" - After test execution, actual test result should be filled")
                     break;
                 case "select":
