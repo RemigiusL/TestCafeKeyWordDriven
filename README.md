@@ -60,10 +60,8 @@ var XLSX = require('xlsx')
                 case "typeText":
                     await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
                     break;
-                case "select":
-                   const interfaceSelect = LocatorType(element.LocatorValue);
-                    await t [element.Keyword](interfaceSelect)
-                    await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
+                case "selectText":
+                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
                     break;
                 default:
                     return;
