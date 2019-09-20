@@ -2,7 +2,7 @@
 
 This is the **Keyword-Driven** framework plugin for [TestCafe](http://devexpress.github.io/testcafe).
 
-[![npm badge](https://docs.devexpress.com/TestCafeStudio/images/guides/wait-for-page-to-load.gif)]()
+[![npm badge](https://docs.devexpress.com/TestCafeStudio/images/guides/wait-for-page-to-load.gif)](https://www.youtube.com/watch?v=hstyq-rtRXA&t=2924s)
 
 Testcafe Keyword Driven Framework is a type of Functional Automation Testing Framework which is also known as Table-Driven testing or Action Word based testing.
 
@@ -60,8 +60,10 @@ var XLSX = require('xlsx')
                 case "typeText":
                     await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
                     break;
-                case "selectText":
-                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
+                case "select":
+                   const interfaceSelect = LocatorType(element.LocatorValue);
+                    await t [element.Keyword](interfaceSelect)
+                    await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
                     break;
                 default:
                     return;
