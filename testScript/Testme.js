@@ -81,13 +81,13 @@ test('How to hover over an element (t.hover user action)', async t => {
         .expect(sliderHandle.hasClass('ui-state-hover')).ok();
 });
 
-test('How to select text in an input (t.selectText user action)', async t => {
-    await t
-        .typeText(developerName, 'Test Cafe')
-        .selectText(developerName, 7, 1)
-        .pressKey('delete')
-        .expect(developerName.value).eql('Tfe');
-});
+    test('How to select text in an input (t.selectText user action)', async t => {
+        await t
+            .typeText(developerName, 'Test Cafe')
+            .selectText(developerName, 7, 1)
+            .pressKey('delete')
+            .expect(developerName.value).eql('Tfe');
+    });
 
 test('How to handle a confirmation dialog (t.setNativeDialogHandler() and t.getNativeDialogHistory())', async t => {
     await t
