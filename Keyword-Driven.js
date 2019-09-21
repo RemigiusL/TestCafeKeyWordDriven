@@ -35,7 +35,7 @@ try {
             switch (element.Keyword) {
                 case "navigateTo":
                     await t[element.Keyword](element.Parameter)
-                    logger.info(element.Keyword + LocatorType +element.Parameter + " - After test execution, actual test result should be navigated")
+                    logger.info(element.Keyword + "Url" +element.Parameter + " - After test execution, actual test result should be navigated")
                     break;
                 case "click":
                     await t[element.Keyword](LocatorType(element.LocatorValue))
