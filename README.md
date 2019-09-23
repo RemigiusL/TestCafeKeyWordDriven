@@ -1,14 +1,14 @@
-# Keyword-Driven Framework using TestCafe (beta)
+# Keyword-Driven Framework using TestCafé (beta)
 
-This is the **Keyword-Driven** framework plugin for [TestCafe](http://devexpress.github.io/testcafe).
+This is the **Keyword-Driven** framework plugin for [TestCafé](http://devexpress.github.io/testcafe).
 
 [![npm badge](https://docs.devexpress.com/TestCafeStudio/images/guides/wait-for-page-to-load.gif)](https://www.youtube.com/watch?v=hstyq-rtRXA&t=2924s)
 
-Testcafe Keyword Driven Framework is a type of Functional Automation Testing Framework which is also known as Table-Driven testing or Action Word based testing.
+TestCafé Keyword Driven Framework is a type of Functional Automation Testing Framework which is also known as Table-Driven testing or Action Word based testing.
 
 ![report-sample](https://sites.google.com/site/testingbulletin/_/rsrc/1461315924116/selenium/selenium-frameworks/keyword-driven-framework/5%20column.png)
 
-## To install this TestCafe Keyword-Driven Framework
+## To install this TestCafé Keyword-Driven Framework
 
 - run the command `npm i keyword_driven`.
 
@@ -158,7 +158,7 @@ C:\ProcessDrive\TestCafe\Trails\Keyword_Driven>testcafe chrome Keyword-Driven.js
 
 ## Utility
 
-- `testcafe` enables to execute the keyword-Driven solution.
+- `testCafe enables to execute the keyword-Driven solution.
 - `xlsx` enables to read the excel file with data dynamically from the ./path-to-read/*(.xlsx).
 - `xpath-selector.js` enables to access the xpath(LocatorValue).
 - `log4js` used to [log](https://www.npmjs.com/package/log4js) messages for a specific test.[For more details please refer](https://api.slack.com/methods/files.upload). 

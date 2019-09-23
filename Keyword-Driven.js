@@ -35,33 +35,33 @@ try {
             switch (element.Keyword) {
                 case "navigateTo":
                     await t[element.Keyword](element.Parameter)
-                    logger.info(element.Keyword + "Url" +element.Parameter + " - After test execution, actual test result should be navigated")
+                    logger.info(element.Keyword  +element.Parameter + " - After test execution, actual test result should be navigated")
                     break;
                 case "click":
                     await t[element.Keyword](LocatorType(element.LocatorValue))
-                    logger.info(element.Keyword + LocatorType +element.LocatorValue +" - After test execution, actual test result should be clicked")
+                    logger.info(element.Keyword  +element.LocatorValue +" - After test execution, actual test result should be clicked")
                     break;
                 case "typeText":
                     await t[element.Keyword](LocatorType(element.LocatorValue), element.Parameter, { speed: 1 })
-                    logger.info(element.Keyword + LocatorType + element.Parameter +" - After test execution, actual test result should be filled")
+                    logger.info(element.Keyword  + element.Parameter +" - After test execution, actual test result should be filled")
                     break;
                 case "clear":
                     element.Keyword = "click"
                     await t [element.Keyword](LocatorType(element.LocatorValue));
                     await t.pressKey('ctrl+a delete');
-                    logger.info(element.Keyword + LocatorType + element.LocatorValue +" - After test execution, actual test result should be cleared")
+                    logger.info(element.Keyword  + element.LocatorValue +" - After test execution, actual test result should be cleared")
                     break;
                 case "select":
                     element.Keyword ="click"
                     const interfaceSelect = LocatorType(element.LocatorValue);
                     await t [element.Keyword](interfaceSelect)
                     await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
-                    logger.info(element.Keyword + LocatorType + element.Parameter +" - After test execution, actual test result should be selected")
+                    logger.info(element.Keyword  + element.Parameter +" - After test execution, actual test result should be selected")
                     break;
                 case "withText":
                     element.Keyword ="click"
                     await t [element.Keyword](LocatorType(element.LocatorValue).withText(element.Parameter))
-                    logger.info(element.Keyword + LocatorType + element.LocatorValue +" withText " +element.Parameter +" - After test execution, actual test result should be clicked by withText")
+                    logger.info(element.Keyword  + element.LocatorValue +" withText " +element.Parameter +" - After test execution, actual test result should be clicked by withText")
                     break;
                 default:
                     return;
