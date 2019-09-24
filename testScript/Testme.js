@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import runner from '../ComponentHelper/RunnerHelper'
+import runner from '../componentHelper/RunnerHelper'
 //import runner  from '../ComponentHelper/RunnerHelper';
 
 fixture`A set of examples that illustrate how to use TestCafe API`

@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
-import XPath from './ComponentHelper/xpath-selector';
-import makeDir from './ComponentHelper/makeDirHelper';
-import logAppender from './ComponentHelper/logAppenderHelper';
+import XPath from './componentHelper/xpath-selector';
+import makeDir from './componentHelper/makeDirHelper';
+import logAppender from './componentHelper/logAppenderHelper';
 import { configure, getLogger } from 'log4js';
 
 const getmyDir = new makeDir()
@@ -27,42 +27,53 @@ try {
         for (let i = 0; i < xlData.length; i++) {
             let element = xlData[i]
 
-            let LocatorType = XPath
-            if (element.LocatorType == "Selector") {
-                LocatorType = Selector
+            switch (element.LocatorType) {
+                case "XPath":
+                        element.LocatorType = XPath
+                       break;
+                case "Selector":
+                        element.LocatorType = Selector
+                     break;
+                default:
+                        break;
             }
             
             switch (element.Keyword) {
-                case "navigateTo":
+                case "navigateTo": 
                     await t[element.Keyword](element.Parameter)
-                    logger.info(element.Keyword  +element.Parameter + " - After test execution, actual test result should be navigated")
+                    logger.info(element.Keyword +" Url "+ element.Parameter + " - After test execution, actual test result should be navigated")
                     break;
-                case "click":
-                    await t[element.Keyword](LocatorType(element.LocatorValue))
-                    logger.info(element.Keyword  +element.LocatorValue +" - After test execution, actual test result should be clicked")
+                case "click": 
+                    await t[element.Keyword](element.LocatorType(element.LocatorValue))
+                    logger.info(element.Keyword + " " + element.LocatorValue +" - After test execution, actual test result should be clicked")
                     break;
                 case "typeText":
-                    await t[element.Keyword](LocatorType(element.LocatorValue), element.Parameter, { speed: 1 })
-                    logger.info(element.Keyword  + element.Parameter +" - After test execution, actual test result should be filled")
+                    await t[element.Keyword](element.LocatorType(element.LocatorValue), element.Parameter, { speed: 1 })
+                    logger.info(element.Keyword + " " + element.Parameter +" - After test execution, actual test result should be filled")
                     break;
                 case "clear":
                     element.Keyword = "click"
-                    await t [element.Keyword](LocatorType(element.LocatorValue));
+                    await t [element.Keyword](element.LocatorType(element.LocatorValue));
                     await t.pressKey('ctrl+a delete');
-                    logger.info(element.Keyword  + element.LocatorValue +" - After test execution, actual test result should be cleared")
+                    logger.info(element.Keyword + " " + element.LocatorValue +" - After test execution, actual test result should be cleared")
                     break;
                 case "select":
                     element.Keyword ="click"
-                    const interfaceSelect = LocatorType(element.LocatorValue);
+                    const interfaceSelect = (element.LocatorType(element.LocatorValue));
                     await t [element.Keyword](interfaceSelect)
                     await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
-                    logger.info(element.Keyword  + element.Parameter +" - After test execution, actual test result should be selected")
+                    logger.info(element.Keyword + " " + element.Parameter +" - After test execution, actual test result should be selected")
                     break;
                 case "withText":
                     element.Keyword ="click"
-                    await t [element.Keyword](LocatorType(element.LocatorValue).withText(element.Parameter))
-                    logger.info(element.Keyword  + element.LocatorValue +" withText " +element.Parameter +" - After test execution, actual test result should be clicked by withText")
+                    await t [element.Keyword](element.LocatorType(element.LocatorValue).withText(element.Parameter))
+                    logger.info(element.Keyword + " " + element.LocatorValue +" withText " +element.Parameter +" - After test execution, actual test result should be clicked by withText")
                     break;
+                case "pressKey": 
+                    await t[element.Keyword](element.Parameter);
+                    logger.info(element.Keyword + " " + element.Parameter +" - After test execution, actual test result should be pressed the specific key")
+                    break;
+               
                 default:
                     return;
             }
@@ -70,7 +81,7 @@ try {
            // logger.error("check the file upload")
         }
     })
-    getLogAppender.slack()
+    //getLogAppender.slack()
     
 } catch (error) {
     

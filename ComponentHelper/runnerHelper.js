@@ -1,4 +1,4 @@
-const createTestCafe = require('../node_modules/testcafe');
+const createTestCafe = require('../node_modules/testcafe/ts-defs');
 let testcafe         = null;
 
 createTestCafe('localhost', 1337, 1338)

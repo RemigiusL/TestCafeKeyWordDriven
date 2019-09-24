@@ -1,5 +1,5 @@
-const makeDir = require('make-dir');
-const dateFormat = require('dateformat');
+const makeDir = require('../node_modules/make-dir');
+const dateFormat = require('../node_modules/dateformat');
 const day = dateFormat(new Date(), "yyyy-mm-dd");
 
 export default class make_Dir {

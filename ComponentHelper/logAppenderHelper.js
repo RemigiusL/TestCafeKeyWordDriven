@@ -1,13 +1,13 @@
 import { Selector, t } from 'testcafe';
-import { configure, getLogger } from 'log4js';
+import { configure, getLogger } from '../node_modules/log4js';
 
-let log4js = require("log4js");
+let log4js = require("../node_modules/log4js");
 
-var dateFormat = require('dateformat');
+var dateFormat = require('../node_modules/dateformat');
 var day = dateFormat(new Date(), "yyyy-mm-dd");
 
-var Slack = require('node-slack-upload');
-var fs = require('../node_modules/fstream')
+var Slack = require('../node_modules/node-slack-upload');
+var fs = require('../node_modules/fstream/fstream')
 var slack = new Slack('xoxp-473141949633-477188316819-748904662580-8a48b8b619ec03be45ae1a13cbc4dda7');
 
 export default class logAppender {
