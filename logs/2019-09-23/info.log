@@ -1,0 +1,12 @@
+[2019-09-23T14:23:28.532] [INFO] default - navigateTohttp://kran.avalia.no/ - After test execution, actual test result should be navigated
+[2019-09-23T14:23:39.036] [INFO] default - click//*[@id="navbar"]/ul[1]/li/a - After test execution, actual test result should be clicked
+[2019-09-23T14:23:41.126] [INFO] default - click//a[contains(text(),'Engelsk')] - After test execution, actual test result should be clicked
+[2019-09-23T14:23:45.883] [INFO] default - click//button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-23T14:23:46.884] [INFO] default - typeTextremi@processdrive.com - After test execution, actual test result should be filled
+[2019-09-23T14:23:47.349] [INFO] default - typeTextPd123456 - After test execution, actual test result should be filled
+[2019-09-23T14:23:50.735] [INFO] default - click//button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-23T14:23:57.779] [INFO] default - click//*[@id="navbar"]/ul[3]/li[1]/a - After test execution, actual test result should be clicked
+[2019-09-23T14:23:59.622] [INFO] default - click//a[contains(text(),'User Types')] - After test execution, actual test result should be clicked
+[2019-09-23T14:24:02.311] [INFO] default - click//a[@class='btn btn-primary'] - After test execution, actual test result should be clicked
+[2019-09-23T14:24:06.813] [INFO] default - click//button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-23T14:24:10.538] [INFO] default - click//a[@class='btn btn-danger'] - After test execution, actual test result should be clicked

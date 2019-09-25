@@ -1,0 +1,46 @@
+[2019-09-24T14:40:46.722] [INFO] default - navigateTo Url http://kran.avalia.no/ - After test execution, actual test result should be navigated
+[2019-09-24T14:40:56.339] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//*[@id="navbar"]/ul[1]/li/a - After test execution, actual test result should be clicked
+[2019-09-24T14:40:58.509] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//a[contains(text(),'Engelsk')] - After test execution, actual test result should be clicked
+[2019-09-24T14:41:03.237] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-24T14:41:04.141] [INFO] default - typeTextfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}remi@processdrive.com - After test execution, actual test result should be filled
+[2019-09-24T14:41:04.562] [INFO] default - typeTextfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}Pd123456 - After test execution, actual test result should be filled
+[2019-09-24T14:41:07.802] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-24T14:41:14.677] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//*[@id="navbar"]/ul[3]/li[1]/a - After test execution, actual test result should be clicked
+[2019-09-24T14:41:16.669] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//a[contains(text(),'User Types')] - After test execution, actual test result should be clicked
+[2019-09-24T14:41:19.403] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//a[@class='btn btn-primary'] - After test execution, actual test result should be clicked
+[2019-09-24T14:41:23.991] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-24T14:41:28.571] [INFO] default - clickfunction (xpath) {
+    return (0, _exportableLib.Selector)(elementByXPath(xpath));
+}//a[@class='btn btn-danger'] - After test execution, actual test result should be clicked
+[2019-09-24T14:44:15.902] [INFO] default - navigateTo Url http://kran.avalia.no/ - After test execution, actual test result should be navigated
+[2019-09-24T14:44:25.503] [INFO] default - click //*[@id="navbar"]/ul[1]/li/a - After test execution, actual test result should be clicked
+[2019-09-24T14:44:27.809] [INFO] default - click //a[contains(text(),'Engelsk')] - After test execution, actual test result should be clicked
+[2019-09-24T14:44:32.524] [INFO] default - click //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-24T14:44:33.443] [INFO] default - typeText remi@processdrive.com - After test execution, actual test result should be filled
+[2019-09-24T14:44:33.905] [INFO] default - typeText Pd123456 - After test execution, actual test result should be filled
+[2019-09-24T14:44:37.779] [INFO] default - click //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-24T14:44:44.740] [INFO] default - click //*[@id="navbar"]/ul[3]/li[1]/a - After test execution, actual test result should be clicked
+[2019-09-24T14:44:46.607] [INFO] default - click //a[contains(text(),'User Types')] - After test execution, actual test result should be clicked
+[2019-09-24T14:44:49.269] [INFO] default - click //a[@class='btn btn-primary'] - After test execution, actual test result should be clicked
+[2019-09-24T14:44:53.689] [INFO] default - click //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-24T14:44:57.843] [INFO] default - click //a[@class='btn btn-danger'] - After test execution, actual test result should be clicked
