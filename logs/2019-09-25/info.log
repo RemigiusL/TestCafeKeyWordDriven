@@ -15,3 +15,16 @@
 [2019-09-25T14:23:28.989] [INFO] default - click XPath //a[@class='btn btn-primary'] - After test execution, actual test result should be clicked
 [2019-09-25T14:23:33.272] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
 [2019-09-25T14:23:37.181] [INFO] default - click XPath //a[@class='btn btn-danger'] - After test execution, actual test result should be clicked
+[2019-09-25T16:39:22.117] [INFO] default - navigateTo Url http://kran.avalia.no/ - After test execution, actual test result should be navigated
+[2019-09-25T16:39:36.383] [INFO] default - click XPath //*[@id="navbar"]/ul[1]/li/a - After test execution, actual test result should be clicked
+[2019-09-25T16:39:38.845] [INFO] default - click XPath //a[contains(text(),'Engelsk')] - After test execution, actual test result should be clicked
+[2019-09-25T16:39:45.054] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-25T16:39:45.908] [INFO] default - typeText XPath remi@processdrive.com - After test execution, actual test result should be filled with text
+[2019-09-25T16:39:46.362] [INFO] default - typeText XPath Pd123456 - After test execution, actual test result should be filled with text
+[2019-09-25T16:39:50.025] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-25T16:39:59.725] [INFO] default - click XPath //*[@id="navbar"]/ul[3]/li[1]/a - After test execution, actual test result should be clicked
+[2019-09-25T16:40:01.871] [INFO] default - click XPath //a[contains(text(),'User Types')] - After test execution, actual test result should be clicked
+[2019-09-25T16:40:05.299] [INFO] default - click XPath //a[@class='btn btn-primary'] - After test execution, actual test result should be clicked
+[2019-09-25T16:40:11.302] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-09-25T16:40:16.606] [INFO] default - click XPath //a[@class='btn btn-danger'] - After test execution, actual test result should be clicked
+[2019-09-25T16:40:27.324] [ERROR] default - Oops, Not implemented! [object Object]

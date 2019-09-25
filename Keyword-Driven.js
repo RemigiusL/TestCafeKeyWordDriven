@@ -18,29 +18,37 @@ const logger = getLogger();
  **/
 
 fixture `Getting Started`
-
 .page `https://devexpress.github.io/testcafe/documentation/getting-started/`;
+
+/**
+ * Sentry
+ */
+const Sentry = require('@sentry/node');
+Sentry.init({ dsn: 'https://b704ed0675e448fbbc1208df09a3b8f5@sentry.io/1542672' });
+
 
 var XLSX = require('xlsx')
     var workbook = XLSX.readFile('./metaData/readfile.xlsx');
     var sheet_name_list = workbook.SheetNames;
     var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-try {
-    test('Keyword-Driven Framework',  async t => {
+    
+    test('Keyword-Driven',  async t => {
         await t.maximizeWindow()
+        try {
+        // xlData.forEach(element => {
         for (let i = 0; i < xlData.length; i++) {
             let element = xlData[i]
-            
-            const LocatorType = element.LocatorType
+
+        const LocatorType = element.LocatorType
             switch (element.LocatorType) {
                 case "XPath":
-                        element.LocatorType = XPath
-                       break;
+                    element.LocatorType = XPath
+                    break;
                 case "Selector":
-                        element.LocatorType = Selector
-                     break;
+                    element.LocatorType = Selector
+                    break;
                 default:
-                        break;
+                    break;
             }
             switch (element.Keyword) {
                 case "navigateTo": //t.navigateTo( url )
@@ -69,7 +77,7 @@ try {
                     await t.pressKey('ctrl+a delete');
                     logger.info(element.Keyword+" "+LocatorType+" "+element.LocatorValue +" - After test execution, actual test result should be cleared")
                     break;
-                case "select":
+                case "select": 
                     element.Keyword ="click"
                     const interfaceSelect = (element.LocatorType(element.LocatorValue));
                     await t [element.Keyword](interfaceSelect)
@@ -99,22 +107,21 @@ try {
                     break;
                 case "resizeWindow": //t.resizeWindow( width, height )
                     await t[element.Keyword](element.Parameter)
-                    logger.info(element.Keyword + "  " + element.Parameter + " - After test execution, actual test result should be resizedwindow")
+                    logger.info(element.Keyword+" "+element.Parameter + " - After test execution, actual test result should be resizedwindow")
                     break;
                 case "drag": //t.drag( selector, dragOffsetX, dragOffsetY [, options] )
                     await t[element.Keyword](element.LocatorType(element.LocatorValue), element.Parameter, { offsetX: 10, offsetY: 10 })
                     logger.info(element.Keyword+" "+LocatorType+" "+element.Parameter +" - After test execution, actual test result should be draged element into the position")
                     break;
                 default:
-                    return;
+                   return;
             }
-            await t.setTestSpeed(0.1)
-           // logger.error("check the file upload")
+       
+            await t.setTestSpeed(0.01)
         }
-    })
-    //getLogAppender.slack()
-    
-} catch (error) {
-    
-  throw(error);
-}
+    } catch (error) {
+        Sentry.captureException(new Error("Oops, Not implemented! " + error));
+        logger.error("Oops, Not implemented! " +error)
+        return;
+    }
+})
