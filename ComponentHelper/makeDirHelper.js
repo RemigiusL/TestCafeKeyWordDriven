@@ -4,9 +4,9 @@ const day = dateFormat(new Date(), "yyyy-mm-dd");
 
 export default class make_Dir {
 
-    async makeDir () {
-        await makeDir("logs/"+ day);
-    }
+	async makeDir() {
+		await makeDir("logs/" + day);
+	}
 }
 
 
@@ -23,12 +23,9 @@ export default class make_Dir {
 //        // .takeScreenshot('my-fixture/thank-you-page.png');
 //        //const path = await makeDir('unicorn/rainbow/cake');
 //        const path = await makeDir(day);
- 
+
 //     console.log(path);
 //     console.log(day);
 
-       
+
 // });
-
-
-
