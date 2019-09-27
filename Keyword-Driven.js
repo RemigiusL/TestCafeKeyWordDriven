@@ -9,6 +9,7 @@ import {
 	getLogger
 } from 'log4js';
 import slack_msg from './ComponentHelper/slack_msg_appenderHelper';
+import slack_file from './ComponentHelper/slack_file_appenderHelper';
 
 const getmyDir = new makeDir()
 getmyDir.makeDir();
@@ -19,7 +20,10 @@ logger.level = 'debug';
 getLogAppender.info()
 
 const slack_msg_append = new slack_msg()
-slack_msg_append.slack()
+slack_msg_append.slack_msg()
+
+const slack_file_append = new slack_file()
+
 
 /**
  * @Description of the Keyword-DrivenFramework
@@ -144,6 +148,7 @@ test('Keyword-Driven Framework', async t => {
 	} catch (error) {
 		logger.error("Oops, Not implemented! " + error)
 		Sentry.captureException(new Error("Oops, Not implemented! " + error));
+		slack_file_append.slack_file_upload()
 		return;
 	}
 })

@@ -5,7 +5,7 @@ let log4js = require("log4js");
 
 export default class slack_Msg_Appender {
 
-    async slack(){
+    async slack_msg(){
       const logger = getLogger();
       logger.level = 'error';
 
