@@ -63,10 +63,10 @@ test('Keyword-Driven', async t => {
 				await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
 				break;
 			case "select": //.click(Selector('a').withText('Glemt passord?'))
-                element.Keyword ="click"
-                const interfaceSelect = XPath(element.LocatorValue);
-                await t [element.Keyword](interfaceSelect)
-                await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
+				element.Keyword = "click"
+				const interfaceSelect = XPath(element.LocatorValue);
+				await t[element.Keyword](interfaceSelect)
+				await t[element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
 				break;
 			default:
 				return;
