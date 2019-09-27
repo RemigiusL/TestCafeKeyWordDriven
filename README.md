@@ -35,64 +35,68 @@ testcafe chrome ./path-to-tests/*(.js)
 - Create a `keyword-driven.js` file at the project root:
 
 ```javascript
-import { Selector } from 'testcafe';
+import {
+	Selector
+} from 'testcafe';
 import XPath from './ComponentHelper/xpath-selector';
 
 fixture `Getting Started`
-.page `https://devexpress.github.io/testcafe/documentation/getting-started/`;
+	.page `https://devexpress.github.io/testcafe/documentation/getting-started/`;
 
 var XLSX = require('xlsx')
-    var workbook = XLSX.readFile('./path-to-read/*(.xlsx)');
-    var sheet_name_list = workbook.SheetNames;
-    var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+var workbook = XLSX.readFile('./path-to-read/*(.xlsx)');
+var sheet_name_list = workbook.SheetNames;
+var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
 
-    test('Keyword-Driven',  async t => {
-        await t.maximizeWindow()
-        for (let i = 0; i < xlData.length; i++) {
-            let element = xlData[i]
-            switch (element.Keyword) {
-                case "navigateTo":
-                    await t[element.Keyword](element.Parameter)
-                    break;
-                case "click":
-                    await t[element.Keyword](XPath(element.LocatorValue))
-                    break;
-                case "typeText":
-                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
-                    break;
-                case "selectText":
-                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
-                    break;
-                default:
-                    return;
-            }
-            await t.setTestSpeed(0.1)
-        }
-    });
+test('Keyword-Driven', async t => {
+	await t.maximizeWindow()
+	for (let i = 0; i < xlData.length; i++) {
+		let element = xlData[i]
+		switch (element.Keyword) {
+			case "navigateTo":
+				await t[element.Keyword](element.Parameter)
+				break;
+			case "click":
+				await t[element.Keyword](XPath(element.LocatorValue))
+				break;
+			case "typeText":
+				await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
+				break;
+			case "selectText":
+				await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
+				break;
+			default:
+				return;
+		}
+		await t.setTestSpeed(0.1)
+	}
+});
 ```
 
 - Create the following script in the `xpath-selector.js` file for handling `XPath`:
 
 ```javascript
-import { Selector } from 'testcafe';
+import {
+	Selector
+} from 'testcafe';
 
 
 const elementByXPath = Selector(xpath => {
-    const iterator = document.evaluate(xpath, document, null, XPathResult.UNORDERED_NODE_ITERATOR_TYPE, null )
-    const items = [];
+	const iterator = document.evaluate(xpath, document, null, XPathResult.UNORDERED_NODE_ITERATOR_TYPE, null)
+	const items = [];
 
-    let item = iterator.iterateNext();
+	let item = iterator.iterateNext();
 
-    while (item) {
-        items.push(item);
-        item = iterator.iterateNext();
-    }
+	while (item) {
+		items.push(item);
+		item = iterator.iterateNext();
+	}
 
-    return items;
+	return items;
 });
 
 export default function (xpath) {
-    return Selector(elementByXPath(xpath));
+	return Selector(elementByXPath(xpath));
 }
 ```
 
