@@ -8,6 +8,7 @@ import {
 	configure,
 	getLogger
 } from 'log4js';
+import slack_msg from './ComponentHelper/slack_msg_appenderHelper';
 
 const getmyDir = new makeDir()
 getmyDir.makeDir();
@@ -16,6 +17,9 @@ const getLogAppender = new logAppender()
 const logger = getLogger();
 logger.level = 'debug';
 getLogAppender.info()
+
+const slack_msg_append = new slack_msg()
+slack_msg_append.slack()
 
 /**
  * @Description of the Keyword-DrivenFramework
