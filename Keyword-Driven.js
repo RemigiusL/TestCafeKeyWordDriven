@@ -99,7 +99,7 @@ test('Keyword-Driven Framework', async t => {
 					await t.pressKey('ctrl+a delete');
 					logger.info(element.Keyword + " " + LocatorType + " " + element.LocatorValue + " - After test execution, actual test result should be cleared")
 					break;
-				case "select":
+				case "select": //.click(Selector('a').withText('Glemt passord?'))
 					element.Keyword = "click"
 					const interfaceSelect = (element.LocatorType(element.LocatorValue));
 					await t[element.Keyword](interfaceSelect)

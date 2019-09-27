@@ -53,17 +53,20 @@ test('Keyword-Driven', async t => {
 	for (let i = 0; i < xlData.length; i++) {
 		let element = xlData[i]
 		switch (element.Keyword) {
-			case "navigateTo":
+			case "navigateTo": //t.navigateTo( url )
 				await t[element.Keyword](element.Parameter)
 				break;
-			case "click":
+			case "click": //t.click( selector [, options] )
 				await t[element.Keyword](XPath(element.LocatorValue))
 				break;
-			case "typeText":
+			case "typeText": //t.typeText( selector, text [, options] )
 				await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
 				break;
-			case "selectText":
-				await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
+			case "select": //.click(Selector('a').withText('Glemt passord?'))
+                element.Keyword ="click"
+                const interfaceSelect = XPath(element.LocatorValue);
+                await t [element.Keyword](interfaceSelect)
+                await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
 				break;
 			default:
 				return;
@@ -162,7 +165,7 @@ C:\ProcessDrive\TestCafe\Trails\Keyword_Driven>testcafe chrome Keyword-Driven.js
 
 ## Utility
 
-- `testCafe enables to execute the keyword-Driven solution.
+- `testCafe` enables to execute the keyword-Driven solution.
 - `xlsx` enables to read the excel file with data dynamically from the ./path-to-read/*(.xlsx).
 - `xpath-selector.js` enables to access the xpath(LocatorValue).
 - `log4js` used to [log](https://www.npmjs.com/package/log4js) messages for a specific test.[For more details please refer](https://api.slack.com/methods/files.upload). 
