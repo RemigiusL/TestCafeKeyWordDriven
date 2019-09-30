@@ -20,8 +20,6 @@ logger.level = 'debug';
 getLogAppender.info()
 
 const slack_msg_append = new slack_msg()
-slack_msg_append.slack_msg()
-
 const slack_file_append = new slack_file()
 
 
@@ -146,6 +144,7 @@ test('Keyword-Driven Framework', async t => {
 			await t.setTestSpeed(0.01)
 		}
 	} catch (error) {
+		slack_msg_append.slack_msg()
 		logger.error("Oops, Not implemented! " + error)
 		Sentry.captureException(new Error("Oops, Not implemented! " + error));
 		slack_file_append.slack_file_upload()

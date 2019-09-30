@@ -13,7 +13,7 @@ export default class slack_Msg_Appender {
         appenders: {
           alerts: {
             type: '@log4js-node/slack',
-            token: 'xoxp-473141949633-477188316819-748904662580-8a48b8b619ec03be45ae1a13cbc4dda7',
+            token: 'xoxp-473141949633-477188316819-762075527009-e1b768a9d63cfd23f36a98675e3da2d7',
             channel_id: 'DE2LBQNKG',
             username: 'Remi',
           }
@@ -22,5 +22,5 @@ export default class slack_Msg_Appender {
           default: { appenders: ['alerts'], level: 'error' }
         }
       });
-    }
+   }
 }
