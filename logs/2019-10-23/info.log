@@ -1,0 +1,8 @@
+[2019-10-23T15:02:28.905] [ERROR] default - Oops, Not implemented! TypeError: Cannot read property 'length' of null
+[2019-10-23T15:15:44.776] [INFO] default - navigateTo Url http://kran.avalia.no/ - After test execution, actual test result should be navigated
+[2019-10-23T15:16:00.370] [INFO] default - click XPath //*[@id="navbar"]/ul[1]/li/a - After test execution, actual test result should be clicked
+[2019-10-23T15:16:02.678] [INFO] default - click XPath //a[contains(text(),'Engelsk')] - After test execution, actual test result should be clicked
+[2019-10-23T15:16:08.970] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
+[2019-10-23T15:16:09.761] [INFO] default - typeText XPath remi@processdrive.com - After test execution, actual test result should be filled with text
+[2019-10-23T15:16:10.121] [INFO] default - typeText XPath Pd123456 - After test execution, actual test result should be filled with text
+[2019-10-23T15:16:13.970] [INFO] default - click XPath //button[@type='submit'] - After test execution, actual test result should be clicked
