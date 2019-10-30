@@ -138,8 +138,8 @@ test('Keyword-Driven Framework', async t => {
 				TCID 		: rows[i][0],
 				TestSteps 	: rows[i][1],
 				Keyword 	: rows[i][2],
-				LocatorType : rows[i][3],
-				LocatorValue: rows[i][4],
+				LocatorType     : rows[i][3],
+				LocatorValue	: rows[i][4],
 				Parameter 	: rows[i][5],
 			}
 								
@@ -231,9 +231,9 @@ test('Keyword-Driven Framework', async t => {
 		}
 	} catch (error) {
         slack_msg_append.slack_msg()
-		logger.error("Oops, Not implemented! " + error)
+	logger.error("Oops, Not implemented! " + error)
         Sentry.captureException(new Error("Oops, Not implemented! " + error));
         slack_file_append.slack_file_upload()
-		return;
+	return;
 	}
 })
