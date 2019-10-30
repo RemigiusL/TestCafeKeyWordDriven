@@ -32,6 +32,19 @@ const {
 	google
 } = require('googleapis');
 
+/*
+|--------------------------------------------------------------------------
+| Keyword Driven Framework by Google Sheets API v4(Node.js)
+|--------------------------------------------------------------------------
+|
+| Testcafe Keyword Driven Framework is a type of Functional Automation
+| Testing Framework which is also known as Table-Driven testing or Action Word-based testing by Google Sheets API v4(Node.js). 
+| A node.js tool to automate funtional end-to-end web/mobile testing.
+| We have the options for Screenshot rendering, Video rendering, Logger rendering, Mail rendering
+| Slack appender(msg, Files). 
+|
+*/
+
 fixture `Getting Started`
 	.page `https://devexpress.github.io/testcafe/documentation/getting-started/`;
 	
@@ -135,12 +148,12 @@ test('Keyword-Driven Framework', async t => {
 	try {
 		for (let i = 0; i < rows.length; i++) {
 			let element = {
-				TCID 		: rows[i][0],
-				TestSteps 	: rows[i][1],
-				Keyword 	: rows[i][2],
+				TCID 			: rows[i][0],
+				TestSteps 		: rows[i][1],
+				Keyword 		: rows[i][2],
 				LocatorType     : rows[i][3],
 				LocatorValue	: rows[i][4],
-				Parameter 	: rows[i][5],
+				Parameter 		: rows[i][5],
 			}
 								
 			const LocatorType = element.LocatorType
@@ -231,7 +244,7 @@ test('Keyword-Driven Framework', async t => {
 		}
 	} catch (error) {
         slack_msg_append.slack_msg()
-	logger.error("Oops, Not implemented! " + error)
+		logger.error("Oops, Not implemented! " + error)
         Sentry.captureException(new Error("Oops, Not implemented! " + error));
         slack_file_append.slack_file_upload()
 	return;

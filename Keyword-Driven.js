@@ -28,7 +28,7 @@ const slack_file_append = new slack_file()
 |--------------------------------------------------------------------------
 |
 | Testcafe Keyword Driven Framework is a type of Functional Automation
-| Testing Framework which is also known as Table-Driven testing or Action Word-based testing. 
+| Testing Framework which is also known as Table-Driven testing or Action Word-based testing by local .xlsx. 
 | A node.js tool to automate funtional end-to-end web/mobile testing.
 | We have the options for Screenshot rendering, Video rendering, Logger rendering, Mail rendering
 | Slack appender(msg, Files). 
