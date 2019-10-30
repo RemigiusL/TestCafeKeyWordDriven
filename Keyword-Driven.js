@@ -22,20 +22,32 @@ getLogAppender.info()
 const slack_msg_append = new slack_msg()
 const slack_file_append = new slack_file()
 
-
-/**
- * @Description of the Keyword-DrivenFramework
- * Testcafe Keyword Driven Framework is a type of Functional Automation Testing Framework which is also known as Table-Driven testing or Action Word-based testing. 
- * A node.js tool to automate end-to-end web testing.
- **/
+/*
+|--------------------------------------------------------------------------
+| Keyword Driven Framework
+|--------------------------------------------------------------------------
+|
+| Testcafe Keyword Driven Framework is a type of Functional Automation
+| Testing Framework which is also known as Table-Driven testing or Action Word-based testing. 
+| A node.js tool to automate funtional end-to-end web/mobile testing.
+| We have the options for Screenshot rendering, Video rendering, Logger rendering, Mail rendering
+| Slack appender(msg, Files). 
+|
+*/
 
 fixture `Getting Started`
 	.page `https://devexpress.github.io/testcafe/documentation/getting-started/`;
 
-/**
- * @Sentry
- * Sentry is also used by support. When a user gets an error, they're given a hash they can include in a support email.  
- */
+/*
+|--------------------------------------------------------------------------
+| Sentry
+|--------------------------------------------------------------------------
+|
+| Sentry is also used by support. When a user gets an error,
+| they're given a hash they can include in a support email.
+|
+*/
+
 const Sentry = require('@sentry/node');
 Sentry.init({
 	dsn: 'https://b704ed0675e448fbbc1208df09a3b8f5@sentry.io/1542672'
@@ -47,9 +59,16 @@ var workbook = XLSX.readFile('./metaData/readfile.xlsx');
 var sheet_name_list = workbook.SheetNames;
 var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
 
-/**
- * @param  {} 'Keyword-DrivenFramework'
- */
+/*
+|--------------------------------------------------------------------------
+|  @param  
+|--------------------------------------------------------------------------
+|
+| @param  {} 'Keyword-DrivenFramework'
+|
+|
+*/
+
 test('Keyword-Driven Framework', async t => {
 	await t.maximizeWindow()
 	try {
