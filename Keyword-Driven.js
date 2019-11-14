@@ -10,6 +10,7 @@ import {
 } from 'log4js';
 import slack_msg from './ComponentHelper/slack_msg_appenderHelper';
 import slack_file from './ComponentHelper/slack_file_appenderHelper';
+let faker = require('faker');
 
 const getmyDir = new makeDir()
 getmyDir.makeDir();
@@ -105,7 +106,8 @@ test('Keyword-Driven Framework', async t => {
 					logger.info(element.Keyword + " " + LocatorType + " " + element.LocatorValue + " - After test execution, actual test result should be rightClicked")
 					break;
 				case "typeText": //t.typeText( selector, text [, options] )
-					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.Parameter, {
+					let value = element.Parameter.includes("faker") ? eval(element.Parameter): element.Parameter;
+					await t[element.Keyword](element.LocatorType(element.LocatorValue), value, {
 						speed: 1
 					})
 					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be filled with text")

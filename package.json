@@ -9,6 +9,7 @@
     "@sentry/node": "^5.6.2",
     "check-prop-types": "^1.1.2",
     "dateformat": "^3.0.3",
+    "faker": "^4.1.0",
     "ffmpeg": "^0.0.4",
     "fs": "0.0.1-security",
     "google-spreadsheet": "^2.0.7",

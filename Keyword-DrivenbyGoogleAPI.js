@@ -10,7 +10,7 @@ import {
 } from 'log4js';
 import slack_msg from './ComponentHelper/slack_msg_appenderHelper';
 import slack_file from './ComponentHelper/slack_file_appenderHelper';
-
+let faker = require('faker');
 
 let rows = null
 
@@ -135,7 +135,7 @@ function listMajors(auth) {
 	});
 	sheets.spreadsheets.values.get({
 		spreadsheetId: '1AUI0HzAzG7Ip4SpYbmdhhzJTRAQdw3OEjsl0CK6BR_Y',
-		range: 'testData0!A2:F',
+		range: 'september!A2:F',
 	}, (err, res) => {
 		if (err) return console.log('The API returned an error: ' + err);
 		 rows = res.data.values;
@@ -185,7 +185,8 @@ test('Keyword-Driven Framework', async t => {
 					logger.info(element.Keyword + " " + LocatorType + " " + element.LocatorValue + " - After test execution, actual test result should be rightClicked")
 					break;
 				case "typeText": //t.typeText( selector, text [, options] )
-					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.Parameter, {
+					let value = element.Parameter.includes("faker") ? eval(element.Parameter): element.Parameter;
+					await t[element.Keyword](element.LocatorType(element.LocatorValue), value, {
 						speed: 1
 					})
 					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be filled with text")
