@@ -238,6 +238,14 @@ test('Keyword-Driven Framework', async t => {
 					})
 					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be draged element into the position")
 					break;
+				case "switchToIframe":
+					await t[element.Keyword](element.LocatorType(element.LocatorValue))
+					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be switchedToIframe")
+					break;
+				case"switchToMainWindow":
+					await t.switchToMainWindow()
+					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be switchedToMainWindow")
+					break;
 				default:
 					return;
 			}
