@@ -200,8 +200,12 @@ test('Keyword-Driven Framework', async t => {
 				case "select":
 					element.Keyword = "click"
 					const interfaceSelect = (element.LocatorType(element.LocatorValue));
-					await t[element.Keyword](interfaceSelect)
-					await t[element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
+					await t[element.Keyword](interfaceSelect),{
+						speed: 1
+					}
+					await t[element.Keyword](interfaceSelect.find('option').withText(element.Parameter), {
+						speed: 1
+					})
 					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be selected")
 					break;
 				case "withText": //.click(Selector('a').withText('Glemt passord?'))
