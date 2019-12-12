@@ -186,6 +186,13 @@ test('Keyword-Driven Framework', async t => {
 					break;
 				case "typeText": //t.typeText( selector, text [, options] )
 					let value = element.Parameter.includes("faker") ? eval(element.Parameter): element.Parameter;
+					if (element.Parameter != null)
+					await t.click(element.LocatorType(element.LocatorValue),{
+						speed: 1
+					});
+					await t.pressKey('ctrl+a delete'),{
+						speed: 1
+					};
 					await t[element.Keyword](element.LocatorType(element.LocatorValue), value, {
 						speed: 1
 					})
