@@ -153,7 +153,7 @@ test('Keyword-Driven Framework', async t => {
 				Keyword 		: rows[i][2],
 				LocatorType     : rows[i][3],
 				LocatorValue	: rows[i][4],
-				Parameter 		: rows[i][5],
+				TestData 		: rows[i][5],
 			}
 								
 			const LocatorType = element.LocatorType
@@ -169,8 +169,8 @@ test('Keyword-Driven Framework', async t => {
 			}
 			switch (element.Keyword) {
 				case "navigateTo": //t.navigateTo( url )
-					await t[element.Keyword](element.Parameter)
-					logger.info(element.Keyword + " Url " + element.Parameter + " - After test execution, actual test result should be navigated")
+					await t[element.Keyword](element.TestData)
+					logger.info(element.Keyword + " Url " + element.TestData + " - After test execution, actual test result should be navigated")
 					break;
 				case "click": //t.click( selector [, options] )
 					await t[element.Keyword](element.LocatorType(element.LocatorValue))
@@ -185,8 +185,8 @@ test('Keyword-Driven Framework', async t => {
 					logger.info(element.Keyword + " " + LocatorType + " " + element.LocatorValue + " - After test execution, actual test result should be rightClicked")
 					break;
 				case "typeText": //t.typeText( selector, text [, options] )
-					let value = element.Parameter.includes("faker") ? eval(element.Parameter): element.Parameter;
-					if (element.Parameter != null)
+					let value = element.TestData.includes("faker") ? eval(element.TestData): element.TestData;
+					if (element.TestData != null)
 					await t.click(element.LocatorType(element.LocatorValue),{
 						speed: 1
 					});
@@ -196,7 +196,7 @@ test('Keyword-Driven Framework', async t => {
 					await t[element.Keyword](element.LocatorType(element.LocatorValue), value, {
 						speed: 1
 					})
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be filled with text")
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be filled with text")
 					break;
 				case "clear": //t.click( selector, text [, options] )
 					element.Keyword = "click"
@@ -210,52 +210,52 @@ test('Keyword-Driven Framework', async t => {
 					await t[element.Keyword](interfaceSelect),{
 						speed: 1
 					}
-					await t[element.Keyword](interfaceSelect.find('option').withText(element.Parameter), {
+					await t[element.Keyword](interfaceSelect.find('option').withText(element.TestData), {
 						speed: 1
 					})
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be selected")
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be selected")
 					break;
 				case "withText": //.click(Selector('a').withText('Glemt passord?'))
 					element.Keyword = "click"
-					await t[element.Keyword](element.LocatorType(element.LocatorValue).withText(element.Parameter))
-					logger.info(element.Keyword + " " + LocatorType + " " + element.LocatorValue + " withText " + element.Parameter + " - After test execution, actual test result should be clicked by withText")
+					await t[element.Keyword](element.LocatorType(element.LocatorValue).withText(element.TestData))
+					logger.info(element.Keyword + " " + LocatorType + " " + element.LocatorValue + " withText " + element.TestData + " - After test execution, actual test result should be clicked by withText")
 					break;
 				case "pressKey": //t.pressKey( keys [, options] )
-					await t[element.Keyword](element.Parameter);
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be pressed the specific key")
+					await t[element.Keyword](element.TestData);
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be pressed the specific key")
 					break;
 				case "hover": //t.hover( selector [, options] )
 					await t[element.Keyword](element.LocatorType(element.LocatorValue))
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be hover the specific field")
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be hover the specific field")
 					break;
 				case "selectText": //t.selectText( selector [, startPos] [, endPos] [, options] )
-					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.Parameter, {
+					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.TestData, {
 						speed: 1
 					})
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be selectText the specific field")
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be selectText the specific field")
 					break;
 				case "setFilesToUpload": //t.setFilesToUpload( selector, filePath )
-					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.Parameter)
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be uploaded files into the specific app")
+					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.TestData)
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be uploaded files into the specific app")
 					break;
 				case "resizeWindow": //t.resizeWindow( width, height )
-					await t[element.Keyword](element.Parameter)
-					logger.info(element.Keyword + " " + element.Parameter + " - After test execution, actual test result should be resizedwindow")
+					await t[element.Keyword](element.TestData)
+					logger.info(element.Keyword + " " + element.TestData + " - After test execution, actual test result should be resizedwindow")
 					break;
 				case "drag": //t.drag( selector, dragOffsetX, dragOffsetY [, options] )
-					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.Parameter, {
+					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.TestData, {
 						offsetX: 10,
 						offsetY: 10
 					})
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be draged element into the position")
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be draged element into the position")
 					break;
 				case "switchToIframe":
 					await t[element.Keyword](element.LocatorType(element.LocatorValue))
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be switchedToIframe")
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be switchedToIframe")
 					break;
 				case"switchToMainWindow":
 					await t.switchToMainWindow()
-					logger.info(element.Keyword + " " + LocatorType + " " + element.Parameter + " - After test execution, actual test result should be switchedToMainWindow")
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be switchedToMainWindow")
 					break;
 				default:
 					return;
