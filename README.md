@@ -54,19 +54,19 @@ test('Keyword-Driven', async t => {
 		let element = xlData[i]
 		switch (element.Keyword) {
 			case "navigateTo": //t.navigateTo( url )
-				await t[element.Keyword](element.Parameter)
+				await t[element.Keyword](element.TestData)
 				break;
 			case "click": //t.click( selector [, options] )
 				await t[element.Keyword](XPath(element.LocatorValue))
 				break;
 			case "typeText": //t.typeText( selector, text [, options] )
-				await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
+				await t[element.Keyword](XPath(element.LocatorValue), element.TestData)
 				break;
 			case "select": //.click(Selector('a').withText('Glemt passord?'))
 				element.Keyword = "click"
 				const interfaceSelect = XPath(element.LocatorValue);
 				await t[element.Keyword](interfaceSelect)
-				await t[element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
+				await t[element.Keyword](interfaceSelect.find('option').withText(element.TestData))
 				break;
 			default:
 				return;
@@ -125,19 +125,19 @@ C:\ProcessDrive\TestCafe\Trails\Keyword_Driven>testcafe chrome Keyword-Driven.js
 
          21 |            switch (element.Keyword) {
          22 |                case "navigateTo":
-         23 |                    await t[element.Keyword](element.Parameter)
+         23 |                    await t[element.Keyword](element.TestData)
          24 |                    break;
          25 |                case "click":
        > 26 |                    await t[element.Keyword](XPath(element.LocatorValue))
          27 |                    break;
          28 |                case "typeText":
-         29 |                    await t[element.Keyword](XPath(element.LocatorValue), element.Parameter)
+         29 |                    await t[element.Keyword](XPath(element.LocatorValue), element.TestData)
          30 |                    break;
          31 |                case "select":
                                 element.Keyword ="click"
                                 const interfaceSelect = XPath(element.LocatorValue);
                                 await t [element.Keyword](interfaceSelect)
-                                await t [element.Keyword](interfaceSelect.find('option').withText(element.Parameter))
+                                await t [element.Keyword](interfaceSelect.find('option').withText(element.TestData))
 
          at <anonymous> (C:\ProcessDrive\TestCafe\Trails\Keyword_Driven\Keyword-Driven.js:26:27)
 
