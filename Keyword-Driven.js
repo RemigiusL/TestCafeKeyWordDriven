@@ -2,6 +2,7 @@ import {
 	Selector
 } from 'testcafe';
 import XPath from './componentHelper/xpath-selector';
+import { ClientFunction } from 'testcafe';
 import makeDir from './componentHelper/makeDirHelper';
 import logAppender from './componentHelper/logAppenderHelper';
 import {
@@ -158,6 +159,20 @@ test('Keyword-Driven Framework', async t => {
 						offsetY: 10
 					})
 					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be draged element into the position")
+					break;
+				case"pause": //t.wait( timeout )
+					await t.wait(element.TestData)
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be Pausing the Test")
+					break;
+				case"reload": 
+					const getLocalStorageItem = ClientFunction(key => localStorage.getItem(key));
+					await t.eval(() => localStorage.setItem('key', 'value'));
+					await t.expect(getLocalStorageItem('key')).eql('value');
+					await t.wait(2000);
+					await t.eval(() => location.reload(true));
+					await t.wait(2000);
+					await t.expect(getLocalStorageItem('key')).eql('value');
+					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be reloaded")
 					break;
 				default:
 					return;
