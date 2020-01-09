@@ -108,23 +108,40 @@ test('Keyword-Driven Framework', async t => {
 					break;
 				case "typeText": //t.typeText( selector, text [, options] )
 					let value = element.TestData.includes("faker") ? eval(element.TestData): element.TestData;
+					if (element.TestData != null)
+					await t.click(element.LocatorType(element.LocatorValue),{
+						speed: 1
+					});
+					await t.pressKey('ctrl+a delete'),{
+						speed: 1
+					};
 					await t[element.Keyword](element.LocatorType(element.LocatorValue), value, {
 						speed: 1
 					})
-					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be filled with text")
+					logger.info(element.Keyword + " " + LocatorType + " "+ element.LocatorValue  +" "+ element.TestData + " - After test execution, actual test result should be filled with text")
 					break;
-				case "clear":
+				case "clear": //t.click( selector, text [, options] )
 					element.Keyword = "click"
 					await t[element.Keyword](element.LocatorType(element.LocatorValue));
 					await t.pressKey('ctrl+a delete');
-					logger.info(element.Keyword + " " + LocatorType + " " + element.LocatorValue + " - After test execution, actual test result should be cleared")
+					logger.info(element.Keyword + " " + LocatorType + " "+ element.LocatorValue  +" "+ element.TestData + " - After test execution, actual test result should be cleared")
 					break;
-				case "select": //.click(Selector('a').withText('Glemt passord?'))
+				case "select":
 					element.Keyword = "click"
 					const interfaceSelect = (element.LocatorType(element.LocatorValue));
-					await t[element.Keyword](interfaceSelect)
-					await t[element.Keyword](interfaceSelect.find('option').withText(element.TestData))
-					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be selected")
+					await t[element.Keyword](interfaceSelect),{
+						speed: 1
+					}
+					await t[element.Keyword](interfaceSelect.find('option').withText(element.TestData), {
+						speed: 1
+					})
+					logger.info(element.Keyword + " " + LocatorType + " "+ element.LocatorValue  +" "+ element.TestData + " - After test execution, actual test result should be selected")
+					break;
+				case "select2":
+					element.Keyword = "click"
+					await t[element.Keyword](element.LocatorType(element.LocatorValue))
+					await t.pressKey('down down enter');
+					logger.info(element.Keyword + " " + LocatorType + " " + element.LocatorValue + " - After test execution, actual test result should be random selected")
 					break;
 				case "withText": //.click(Selector('a').withText('Glemt passord?'))
 					element.Keyword = "click"
@@ -137,13 +154,13 @@ test('Keyword-Driven Framework', async t => {
 					break;
 				case "hover": //t.hover( selector [, options] )
 					await t[element.Keyword](element.LocatorType(element.LocatorValue))
-					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be hover the specific field")
+					logger.info(element.Keyword + " " + LocatorType + " "+ element.LocatorValue  +" "+ element.TestData + " - After test execution, actual test result should be hover the specific field")
 					break;
 				case "selectText": //t.selectText( selector [, startPos] [, endPos] [, options] )
 					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.TestData, {
 						speed: 1
 					})
-					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be selectText the specific field")
+					logger.info(element.Keyword + " " + LocatorType + " "+ element.LocatorValue  +" "+ element.TestData + " - After test execution, actual test result should be selectText the specific field")
 					break;
 				case "setFilesToUpload": //t.setFilesToUpload( selector, filePath )
 					await t[element.Keyword](element.LocatorType(element.LocatorValue), element.TestData)
@@ -158,13 +175,21 @@ test('Keyword-Driven Framework', async t => {
 						offsetX: 10,
 						offsetY: 10
 					})
-					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be draged element into the position")
+					logger.info(element.Keyword + " " + LocatorType + " "+ element.LocatorValue  +" "+ element.TestData + " - After test execution, actual test result should be draged element into the position")
 					break;
-				case"pause": //t.wait( timeout )
+				case "switchToIframe":
+					await t[element.Keyword](element.LocatorType(element.LocatorValue))
+					logger.info(element.Keyword + " " + LocatorType + " "+ element.LocatorValue  +" "+ element.TestData + " - After test execution, actual test result should be switchedToIframe")
+					break;
+				case"switchToMainWindow":
+					await t.switchToMainWindow()
+					logger.info(element.Keyword + " " + LocatorType + " "+ element.LocatorValue  +" "+ element.TestData + " - After test execution, actual test result should be switchedToMainWindow")
+					break;
+				case "pause": //t.wait( timeout )
 					await t.wait(element.TestData)
 					logger.info(element.Keyword + " " + LocatorType + " " + element.TestData + " - After test execution, actual test result should be Pausing the Test")
 					break;
-				case"reload": 
+				case "reload": 
 					const getLocalStorageItem = ClientFunction(key => localStorage.getItem(key));
 					await t.eval(() => localStorage.setItem('key', 'value'));
 					await t.expect(getLocalStorageItem('key')).eql('value');
