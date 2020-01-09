@@ -144,6 +144,17 @@ function listMajors(auth) {
 	});
 }
 
+/*
+|--------------------------------------------------------------------------
+| Localization
+|--------------------------------------------------------------------------
+| (faker.Faker) can take a locale as an argument, to return localized data.
+| If no localized provider is found, the factory falls back to the default en_US locale.
+| https://faker.readthedocs.io/en/master/
+|
+*/
+faker.locale = "en_US";
+
 test('Keyword-Driven Framework', async t => {
 	await t.maximizeWindow()
 	try {
