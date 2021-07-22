@@ -24,7 +24,7 @@
     "sendmail": "^1.6.1",
     "slack-file-upload": "0.0.1",
     "testcafe": "^1.4.3",
-    "xlsx": "^0.14.4"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {},
   "scripts": {
